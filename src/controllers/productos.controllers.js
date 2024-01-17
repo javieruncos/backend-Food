@@ -1,3 +1,4 @@
+import e from "express"
 import { Producto } from "../models/producto"
 
 export const listarProductos =async(req,res)=>{
@@ -41,4 +42,19 @@ export const obtenerProducto = async(req,res)=>{
      mensaje:"error no se encontro el producto buscado"
    })
   }
+}
+
+
+export const editarProducto = async (req,res)=> {
+    try {
+      await Producto.findByIdAndUpdate(req.params.id,req.body)
+      res.status(200).json({
+        mensaje:"producto editado existosamente"
+      })
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({
+        mensaje:"error al intentar editar un producto"
+      })
+    }
 }
