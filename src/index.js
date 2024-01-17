@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import path from "path";
+import productoRouter from "./routes/productos.routes"
 import "./database"
+
 
 //creamos una instancia de express
 const app = express()
@@ -24,3 +26,5 @@ app.get("/prueba",(req,res)=>{
     res.send("esto es una prueba de una peticion get")
 
 })
+
+app.use("/apifood",productoRouter)
