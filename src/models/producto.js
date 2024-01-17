@@ -11,6 +11,26 @@ const productoSchema = new Schema({
     precio:{
         type:Number,
         required:true,
-        
+        min:5,
+        max:10000
+    },
+    categoria:{
+        type:String,
+        required:true
+    },
+    imagen:{
+        type:String,
+        required:true,
+    },
+    descripcion:{
+        type:String,
+        required:true
+    },
+    ingredientes:{
+        type:Array,
+        requiered:true
     }
+    
 })
+
+ export const Producto = mongoose.model("producto",productoSchema)
