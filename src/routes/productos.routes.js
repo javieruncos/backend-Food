@@ -41,7 +41,7 @@ router
       check("categoria")
         .notEmpty()
         .withMessage("La categoria es un dato obligatorio")
-        .isIn(["Hamburguesa","pizza","pasta","pollo"])
+        .isIn(["Hamburguesa","pizza","tacos","pollo"])
         .withMessage("debe ingresar una categoria valida"),
       check("ingredientes")
         .notEmpty()
