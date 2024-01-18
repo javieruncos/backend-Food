@@ -45,7 +45,9 @@ router
         .withMessage("debe ingresar una categoria valida"),
       check("ingredientes")
         .notEmpty()
-        .withMessage("la lista de ingredientes debe ser un array obligatoriamente"),
+        .withMessage("la lista de ingredientes debe ser un array obligatoriamente")
+        .isLength({min:20,max:1000})
+        .withMessage("la cantidad de caracteres debe estar entre 50 y 1000"),
         check("descripcion").notEmpty()
         .withMessage("la descripcion es un dato obligatorio")
         .isLength({min:50,max:1000})

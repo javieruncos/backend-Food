@@ -27,7 +27,7 @@ const productoSchema = new Schema({
         required:true
     },
     ingredientes:{
-        type:Array,
+        type:String,
         requiered:true
     }
     
