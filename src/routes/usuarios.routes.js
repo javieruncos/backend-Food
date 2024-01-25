@@ -29,6 +29,9 @@ router.route("/crear").post(
   crearUsuario
 );
 
-router.route("/").post(login)
+router.route("/").post([
+    check("email").notEmpty().withMessage("este campo es requerido"),
+    check("password").notEmpty().withMessage("este campo es requerido")
+],login)
 
 export default router;
