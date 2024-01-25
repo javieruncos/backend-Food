@@ -1,10 +1,7 @@
 import { Router } from "express";
 import {
   borrarProducto,
-  crearProducto,
-  editarProducto,
-  listarProductos,
-  obtenerProducto,
+  crearProducto,editarProducto,listarProductos, obtenerProducto,
 } from "../controllers/productos.controllers";
 import { check } from "express-validator";
 

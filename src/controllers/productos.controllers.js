@@ -1,4 +1,3 @@
-import e from "express"
 import { Producto } from "../models/producto"
 import { validationResult } from "express-validator"
 
