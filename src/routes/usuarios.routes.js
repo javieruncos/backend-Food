@@ -31,7 +31,7 @@ router.route("/usuarios").post(
   crearUsuario
 ).get(listarUsuarios);
 
-router.route("/usuarios/login").post([ 
+router.route("/login").post([ 
     check("email").notEmpty().withMessage("este campo es requerido"),
     check("password").notEmpty().withMessage("este campo es requerido")
 ],login)
