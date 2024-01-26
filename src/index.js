@@ -4,9 +4,10 @@ import morgan from "morgan";
 import path from "path";
 import productoRouter from "./routes/productos.routes";
 import usuarioRouter from "./routes/usuarios.routes"
-import "./database"
+import "./database";
+import * as dotenv from "dotenv"
 
-
+dotenv.config()
 
 //creamos una instancia de express
 const app = express()

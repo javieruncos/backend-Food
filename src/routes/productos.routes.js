@@ -4,13 +4,16 @@ import {
   crearProducto,editarProducto,listarProductos, obtenerProducto,
 } from "../controllers/productos.controllers";
 import { check } from "express-validator";
+import validarJWT from "../helpers/validarJWT";
+
 
 const router = Router();
 router
   .route("/productos")
   .get(listarProductos)
   .post(
-    [
+    [ 
+      validarJWT,
       check("nombreProducto")
         .notEmpty()
         .withMessage("el nombre del producto es obligatorio")
