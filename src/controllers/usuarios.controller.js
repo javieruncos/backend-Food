@@ -38,6 +38,23 @@ export const crearUsuario = async (req, res) => {
   }
 };
 
+
+
+export const listarUsuarios = async(req,res)=>{
+
+  try {
+    const usuarios = await Usuario.find();
+    res.status(200).json(usuarios)
+    
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({
+      mensaje:"Error al listar los usuarios"
+    })
+  }
+  
+}
+
 export const login = async (req, res) => {
   try {
     const errors = validationResult(req);
