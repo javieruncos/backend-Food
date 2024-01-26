@@ -48,7 +48,7 @@ export const listarUsuarios = async(req,res)=>{
     
   } catch (error) {
     console.log(error)
-    res.status(400).json({
+    res.status(404).json({
       mensaje:"Error al listar los usuarios"
     })
   }
