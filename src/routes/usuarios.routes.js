@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { crearUsuario, listarUsuarios, login } from "../controllers/usuarios.controller";
 import { check } from "express-validator";
+import validarJWT from "../helpers/validarJWT";
 
 
 const router = Router();
 
-router.route("/usuarios/crear").post(
+router.route("/usuarios").post(
   [
     check("nombre")
       .notEmpty()
@@ -28,15 +29,12 @@ router.route("/usuarios/crear").post(
     check("perfil").notEmpty().withMessage("este es un campo obligatorio"),
   ],
   crearUsuario
-);
+).get(listarUsuarios);
 
-router.route("/usuarios/login").post([
+router.route("/usuarios/login").post([ 
     check("email").notEmpty().withMessage("este campo es requerido"),
     check("password").notEmpty().withMessage("este campo es requerido")
 ],login)
-
-
-router.route("/usuarios").get(listarUsuarios)
 
 
 export default router;
